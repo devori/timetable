@@ -2,10 +2,7 @@
   <v-container>
     <v-card>
       <v-card-text class="text-lg-center">
-        <week-picker :date="date"
-                     @clickPrevious="onClickPrevious"
-                     @clickNext="onClickNext"
-        />
+        <week-picker v-model="startDate"/>
       </v-card-text>
     </v-card>
   </v-container>
@@ -21,7 +18,7 @@ export default {
   },
   data() {
     return {
-      date: moment(),
+      startDate: moment().format('YYYY-MM-DD'),
     };
   },
   computed: {
